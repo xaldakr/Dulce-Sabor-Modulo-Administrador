@@ -1,0 +1,215 @@
+﻿
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Panel de Administración</title>
+</head>
+<body>
+    <br />
+    <div class="row justify-content-center">
+        <div class="col-lg-6 ">
+            <div class="me-4 p-4 bgdarkgray txtwhite">
+                <h3 class="text-center my-1"><strong>DATOS GENERALES</strong></h3>
+                <h3 class="my-3">Mesas disponibles:  </h3>
+                <h3 class="my-3">Mesas ocupadas:  </h3>
+                <h3 class="my-3">N° de pedidos en proceso:  </h3>
+                <h3 class="mt-3">N° de pedidos finalizados:  </h3>
+                <hr class="thicc" />
+                <h3 class="my-3">Ingresos totales en cuentas cerradas:  </h3>
+                <h3 class="mt-3">Ingresos totales de ventas en línea:  </h3>
+                <hr class="thicc" />
+                <h3 class="my-3">Total de ingresos:  </h3>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="ms-4 p-4">
+                <h3 class="text-center"><strong>REPORTES</strong></h3>
+                
+                <!-- Boton Primer modal -- Ventas por Fecha -->
+                <button type="button" class="btn bgblack txtwhite w-100 py-4 rounded-pill my-4" data-toggle="modal" data-target="#VentasFecha">
+                    <h3 class="text-center">Ventas por fecha</h3>
+                </button>
+                <!-- Boton Segundo modal -- Ventas por Mes -->
+                <button type="button" class="btn bgblack txtwhite w-100 py-4 rounded-pill my-4" data-toggle="modal" data-target="#VentasMes">
+                    <h3 class="text-center">Ventas por mes</h3>
+                </button>
+                <!-- Boton Tercer modal -- Ventas en Linea -->
+                <button type="button" class="btn bgblack txtwhite w-100 py-4 rounded-pill my-4" data-toggle="modal" data-target="#VentasLinea">
+                    <h3 class="text-center">Ventas en linea</h3>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Tabla -->
+    <div class="my-2">
+        <table class="thicctable table">
+            <thead class="thicctable">
+                <tr>
+                    <th class="bgnormalgray txtblack text-center"> <h3>N° Mesa</h3></th>
+                    <th class="bgnormalgray txtblack text-center"> <h3>N° cuenta en mesa</h3></th>
+                    <th class="bgnormalgray txtblack text-center"> <h3>Fecha de Creación</h3></th>
+                    <th class="bgnormalgray txtblack text-center"> <h3>Estado</h3></th>
+                    <th class="bgnormalgray txtblack text-center"> <h3>Ingresos por cuenta</h3></th>
+                </tr>
+            </thead>
+            <tbody class="thicctable">
+                <!-- Terminad de Rellenar cuando se tenga el contexto -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Fin Tabla -->
+
+    <!-- Primer modal -- Ventas por Fecha -->
+    <div class="modal fade" id="VentasFecha" tabindex="-1" role="dialog" aria-labelledby="VentasFechalLabel" aria-hidden="true">
+        <div class="modal-xl modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content bgmodal ">
+                
+                <div class="modal-body justify-content-center">
+                    <button type="button" class="close txtblack px-4 pt-4" data-dismiss="modal" aria-label="Close">
+                        <h2 class="txtblack"><strong>X</strong></h2>
+                    </button>
+                    <br />
+                    <br />
+                    <h2 class="my-4 txtblack text-center">Ventas por Fecha</h2>
+                    <div class="d-flex justify-content-center ">
+                        <form action="/" method="get" class="form w-50">
+                            <input type="date" id="datepicker" class="form-control txtwhite bgdarkgray py-4">
+                        </form>
+                    </div>
+                    <!-- Tabla -->
+                    <div class="my-5 mx-5 h-75 overflow-auto">
+                        <table class="othertable table">
+                            <thead class="othertable">
+                                <tr>
+                                    <th class="bgdarkergray txtwhite text-center"> <h5>N° Cuenta</h5></th>
+                                    <th class="bgdarkergray txtwhite text-center"> <h5>Fecha</h5></th>
+                                    <th class="bgdarkergray txtwhite text-center"> <h5>Mesero</h5></th>
+                                    <th class="bgdarkergray txtwhite text-center"> <h5>Ingresos</h5></th>
+                                </tr>
+                            </thead>
+                            <tbody class="othertable">
+                                <!-- Terminad de Rellenar cuando se tenga el contexto -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Fin Tabla -->
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- Fin Primer modal -- Ventas por Fecha -->
+
+    <!-- Segundo modal -- Ventas por Mes -->
+    <div class="modal fade" id="VentasMes" tabindex="-1" role="dialog" aria-labelledby="VentasMeslLabel" aria-hidden="true">
+        <div class="modal-xl modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content bgmodal ">
+
+                <div class="modal-body justify-content-center">
+                    <button type="button" class="close txtblack px-4 pt-4" data-dismiss="modal" aria-label="Close">
+                        <h2 class="txtblack"><strong>X</strong></h2>
+                    </button>
+                    <br />
+                    <br />
+                    <h2 class="my-4 txtblack text-center">Ventas por Mes</h2>
+                    <div class="d-flex justify-content-center ">
+                        <form action="/" method="get" class="form w-50">
+                            <select id="meses" class="form-control txtwhite bgdarkgray py-4">
+                                <option value="1" class="txtwhite bgdarkgray">Enero</option>
+                                <option value="2" class="txtwhite bgdarkgray">Febrero</option>
+                                <option value="3" class="txtwhite bgdarkgray">Marzo</option>
+                                <option value="4" class="txtwhite bgdarkgray">Abril</option>
+                                <option value="5" class="txtwhite bgdarkgray">Mayo</option>
+                                <option value="6" class="txtwhite bgdarkgray">Junio</option>
+                                <option value="7" class="txtwhite bgdarkgray">Julio</option>
+                                <option value="8" class="txtwhite bgdarkgray">Agosto</option>
+                                <option value="9" class="txtwhite bgdarkgray">Septiembre</option>
+                                <option value="10" class="txtwhite bgdarkgray">Octubre</option>
+                                <option value="11" class="txtwhite bgdarkgray">Noviembre</option>
+                                <option value="12" class="txtwhite bgdarkgray">Diciembre</option>
+                            </select>
+                            
+                        </form>
+                    </div>
+                    <!-- Tabla -->
+                    <div class="my-5 mx-5 h-75 overflow-auto">
+                        <table class="othertable table">
+                            <thead class="othertable">
+                                <tr>
+                                    <th class="bgdarkergray txtwhite text-center"> <h5>N° Cuenta</h5></th>
+                                    <th class="bgdarkergray txtwhite text-center"> <h5>Fecha</h5></th>
+                                    <th class="bgdarkergray txtwhite text-center"> <h5>Mesero</h5></th>
+                                    <th class="bgdarkergray txtwhite text-center"> <h5>Ingresos</h5></th>
+                                </tr>
+                            </thead>
+                            <tbody class="othertable">
+                                <!-- Terminad de Rellenar cuando se tenga el contexto -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Fin Tabla -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Fin Segundo modal -- Ventas por Mes -->
+    <!-- Tercer modal -- Ventas en Linea -->
+    <div class="modal fade" id="VentasLinea" tabindex="-1" role="dialog" aria-labelledby="VentasLinealLabel" aria-hidden="true">
+        <div class="modal-xl modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content bgmodal ">
+
+                <div class="modal-body justify-content-center">
+                    <button type="button" class="close txtblack px-4 pt-4" data-dismiss="modal" aria-label="Close">
+                        <h2 class="txtblack"><strong>X</strong></h2>
+                    </button>
+                    <br />
+                    <br />
+                    <h2 class="my-4 txtblack text-center">Ventas en Linea</h2>
+                    <div class="d-flex justify-content-center ">
+                        <form action="/" method="get" class="form w-100 mx-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 align-content-center align-items-center text-center px-5">
+                                    <h5 class="txtblack">Fecha inicio</h5>
+                                    <input type="date" id="datepickerini" class="form-control txtwhite bgdarkgray py-4">
+                                </div>
+                                <div class="col-md-6 align-content-center align-items-center text-center px-5">
+                                    <h5 class="txtblack">Fecha fin</h5>
+                                    <input type="date" id="datepickerfin" class="form-control txtwhite bgdarkgray py-4">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Tabla -->
+                    <div class="my-5 mx-5 h-75 overflow-auto">
+                        <table class="othertable table">
+                            <thead class="othertable">
+                                <tr>
+                                    <th class="bgdarkergray txtwhite text-center"> <h5>N° Cuenta</h5></th>
+                                    <th class="bgdarkergray txtwhite text-center"> <h5>Fecha</h5></th>
+                                    <th class="bgdarkergray txtwhite text-center"> <h5>Mesero</h5></th>
+                                    <th class="bgdarkergray txtwhite text-center"> <h5>Ingresos</h5></th>
+                                </tr>
+                            </thead>
+                            <tbody class="othertable">
+                                <!-- Terminad de Rellenar cuando se tenga el contexto -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Fin Tabla -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Fin Segundo modal -- Ventas en Linea -->
+</body>
+</html>
