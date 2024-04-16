@@ -20,7 +20,9 @@ html {
 body {
   margin-bottom: 60px;
 }
-
+.bgwhite {
+    background-color: white;
+}
 .bggray {
     background-color: #dfdfdf;
 }
