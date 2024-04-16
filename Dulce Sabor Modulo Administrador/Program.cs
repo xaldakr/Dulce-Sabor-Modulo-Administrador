@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using Dulce_Sabor_Modulo_Administrador.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AdminContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DbConnection")
+    ));
 
 var app = builder.Build();
 
