@@ -10,20 +10,16 @@
     </form>
     <br />
     <br />
-    <h2 class="my-4 txtblack text-center">Ventas en Linea</h2>
+    <h2 class="my-4 txtblack text-center">Ventas por Mesero</h2>
     <div class="d-flex justify-content-center ">
-        <form asp-action="formularioLinea" method="get" class="form w-100 mx-5 row justify-content-center">
-            <div class="col-md-6 align-content-center align-items-center text-center px-5">
-                <h5 class="txtblack">Fecha inicio</h5>
-                @Html.TextBox("fechaini", null, new { @class = "form-control txtwhite bgdarkgray py-4", type = "date" })
-            </div>
-            <div class="col-md-6 align-content-center align-items-center text-center px-5">
-                <h5 class="txtblack">Fecha fin</h5>
-                @Html.TextBox("fechafin", null, new { @class = "form-control txtwhite bgdarkgray py-4", type = "date" })
-            </div>
-            <div class="input-group-append">
-                <input type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;" value="Buscar"/>
-            </div>
+        <form asp-action="formularioMesero" method="get" class="form w-100 mx-5">
+                <div class="input-group mb-3">
+                    @Html.TextBox("nombre", "Ingrese el nombre del mesero", new { @class = "form-control txtwhite bgdarkgray py-4" })
+                    <div class="input-group-append">
+
+                        <input type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;" value="Buscar" />
+                    </div>
+                </div>
         </form>
     </div>
     <!-- Tabla -->
@@ -31,9 +27,9 @@
         <table class="othertable table">
             <thead class="othertable">
                 <tr>
+                    <th class="bgdarkergray txtwhite text-center"> <h5>Mesero</h5></th>
                     <th class="bgdarkergray txtwhite text-center"> <h5>N° Cuenta</h5></th>
                     <th class="bgdarkergray txtwhite text-center"> <h5>Fecha</h5></th>
-                    <th class="bgdarkergray txtwhite text-center"> <h5>Mesero</h5></th>
                     <th class="bgdarkergray txtwhite text-center"> <h5>Ingresos</h5></th>
                 </tr>
             </thead>

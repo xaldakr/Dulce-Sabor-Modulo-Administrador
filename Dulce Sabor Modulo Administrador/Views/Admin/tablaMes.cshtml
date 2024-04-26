@@ -13,7 +13,7 @@
     <h2 class="my-4 txtblack text-center">Ventas por Mes</h2>
     <div class="d-flex justify-content-center ">
         <form asp-action="formularioMes" method="get" class="form w-50">
-            @Html.DropDownList("meses", new List<SelectListItem>
+            @Html.DropDownList("mes", new List<SelectListItem>
             {
             new SelectListItem { Text = "Enero", Value = "1" },
             new SelectListItem { Text = "Febrero", Value = "2" },
