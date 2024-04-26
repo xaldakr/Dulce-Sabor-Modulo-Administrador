@@ -36,12 +36,10 @@
                     <input type="submit" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3 textxl" value="Ventas por mes" />
                 </form>
                 <!-- Boton Tercer modal -- Ventas en Linea -->
-                <form asp-action="enviarMes" method="get" class="form w-100">
+                <form asp-action="enviarLinea" method="get" class="form w-100">
                     <input type="submit" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3 textxl" value="Ventas en linea" />
                 </form>
-                <button type="button" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3" data-toggle="modal" data-target="#VentasLinea">
-                    <h3 class="text-center">Ventas en linea</h3>
-                </button
+                
                 <!-- Boton cuarto modal -- ventas mesero -->
                  <button type="button" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3" data-toggle="modal" data-target="#VentasMesero">
                     <h3 class="text-center">Ventas Mesero</h3>
@@ -84,11 +82,11 @@
                         <form asp-action="formularioLinea" method="get" class="form w-100 mx-5 row justify-content-center">
                                 <div class="col-md-6 align-content-center align-items-center text-center px-5">
                                     <h5 class="txtblack">Fecha inicio</h5>
-                                    <input type="date" id="datepickerini" class="form-control txtwhite bgdarkgray py-4">
+                                    @Html.TextBox("fechaini", null, new { @class = "form-control txtwhite bgdarkgray py-4", type = "date" })
                                 </div>
                                 <div class="col-md-6 align-content-center align-items-center text-center px-5">
                                     <h5 class="txtblack">Fecha fin</h5>
-                                    <input type="date" id="datepickerfin" class="form-control txtwhite bgdarkgray py-4">
+                                    @Html.TextBox("fechafin", null, new { @class = "form-control txtwhite bgdarkgray py-4", type = "date" })
                                 </div>
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;">Buscar</button>
