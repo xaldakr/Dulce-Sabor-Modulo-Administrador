@@ -1,7 +1,4 @@
 ﻿
-@{
-}
-
 <!DOCTYPE html>
 
 <html>
@@ -30,15 +27,14 @@
         <div class="col-lg-6">
             <div class="ms-4 p-4">
                 <h3 class="text-center"><strong>REPORTES</strong></h3>
-                
-                <!-- Boton Primer modal -- Ventas por Fecha -->
-                <button type="button" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3" data-toggle="modal" data-target="#VentasFecha">
-                    <h3 class="text-center">Ventas por fecha</h3>
-                </button>
+                  <!-- Boton Primer modal -- Ventas por Fecha -->
+                <form asp-action="enviarFecha" method="get" class="form w-100">
+                    <input type="submit" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3 textxl" value="Ventas por fecha" />
+                </form>
                 <!-- Boton Segundo modal -- Ventas por Mes -->
-                <button type="button" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3" data-toggle="modal" data-target="#VentasMes">
-                    <h3 class="text-center">Ventas por mes</h3>
-                </button>
+                <form asp-action="enviarMes" method="get" class="form w-100">
+                    <input type="submit" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3 textxl" value="Ventas por mes" />
+                </form>
                 <!-- Boton Tercer modal -- Ventas en Linea -->
                 <button type="button" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3" data-toggle="modal" data-target="#VentasLinea">
                     <h3 class="text-center">Ventas en linea</h3>
@@ -69,52 +65,6 @@
     </div>
     <!-- Fin Tabla -->
 
-    <!-- Primer modal -- Ventas por Fecha -->
-    <div class="modal fade" id="VentasFecha" tabindex="-1" role="dialog" aria-labelledby="VentasFechalLabel" aria-hidden="true" data-backdrop="static">
-        <div class="modal-xl modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content bgmodal">
-                <div class="modal-body justify-content-center">
-                    <button type="button" class="close txtblack px-4 pt-4" data-dismiss="modal" aria-label="Close">
-                        <h2 class="txtblack"><strong>X</strong></h2>
-                    </button>
-                    <br />
-                    <br />
-                    <h2 class="my-4 txtblack text-center">Ventas por Fecha</h2>
-                    <div class="d-flex justify-content-center">
-                        <form id="" action="formularioFechas" method="get" class="form w-50">
-                            <div class="input-group">
-                                @Html.TextBox("datepicker", null, new { @class = "form-control txtwhite bgdarkgray py-4", type = "date" })
-                                <div class="input-group-append">
-                                    <input type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;" value="Buscar"></input>
-                                </div>
-                            </div>
-                        </form>
-                        
-                    </div>
-                    <!-- Tabla -->
-                    <div class="my-5 mx-5 h-75 overflow-auto">
-                        <table class="othertable table">
-                            <thead class="othertable">
-                                <tr>
-                                    <th class="bgdarkergray txtwhite text-center"> <h5>N° Cuenta</h5></th>
-                                    <th class="bgdarkergray txtwhite text-center"> <h5>Fecha</h5></th>
-                                    <th class="bgdarkergray txtwhite text-center"> <h5>Mesero</h5></th>
-                                    <th class="bgdarkergray txtwhite text-center"> <h5>Ingresos</h5></th>
-                                </tr>
-                            </thead>
-                            <tbody class="othertable">
-                                <!-- Terminad de Rellenar cuando se tenga el contexto -->
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- Fin Tabla -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Fin Primer modal -- Ventas por Fecha -->
 
     <!-- Segundo modal -- Ventas por Mes -->
     <div class="modal fade" id="VentasMes" tabindex="-1" role="dialog" aria-labelledby="VentasMeslLabel" aria-hidden="true" data-backdrop="static">
@@ -129,7 +79,7 @@
                     <br />
                     <h2 class="my-4 txtblack text-center">Ventas por Mes</h2>
                     <div class="d-flex justify-content-center ">
-                        <form action="formularioMes" method="get" class="form w-50">
+                        <form asp-action="formularioMes" method="get" class="form w-50">
                             @Html.DropDownList("meses", new List<SelectListItem>
                                 {
                                     new SelectListItem { Text = "Enero", Value = "1" },
@@ -276,18 +226,6 @@
         </div>
     </div>
     <!-- Fin Cuarto modal -- Ventas por Mesero -->
-    @section scripts {
-      <script>
-          $(document).ready(function () {
-        // Verifica si hay un parámetro de consulta en la URL que indica que el modal debe mantenerse abierto
-        var modalAbierto = "@Request.Query["modalAbierto"]" === "True";
-
-        // Si el modal debe mantenerse abierto, lo abre
-        if (modalAbierto) {
-            $('#VentasFecha').modal('show');
-        }
-    });
-      </script>
-    }
+     
 </body>
 </html>

@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div>
+    <form id="" asp-action="regresar" method="get" class="form">
+        <input type="submit" class="close txtblack txtblack textxl btn btn-warning" value="Regresar" />
+
+    </form>
+    <br />
+    <br />
+    <h2 class="my-4 txtblack text-center">Ventas por Mes</h2>
+    <div class="d-flex justify-content-center ">
+        <form asp-action="formularioMes" method="get" class="form w-50">
+            @Html.DropDownList("meses", new List<SelectListItem>
+            {
+            new SelectListItem { Text = "Enero", Value = "1" },
+            new SelectListItem { Text = "Febrero", Value = "2" },
+            new SelectListItem { Text = "Marzo", Value = "3" },
+            new SelectListItem { Text = "Abril", Value = "4" },
+            new SelectListItem { Text = "Mayo", Value = "5" },
+            new SelectListItem { Text = "Junio", Value = "6" },
+            new SelectListItem { Text = "Julio", Value = "7" },
+            new SelectListItem { Text = "Agosto", Value = "8" },
+            new SelectListItem { Text = "Septiembre", Value = "9" },
+            new SelectListItem { Text = "Octubre", Value = "10" },
+            new SelectListItem { Text = "Noviembre", Value = "11" },
+            new SelectListItem { Text = "Diciembre", Value = "12" }
+            }, null, new { @class = "form-control txtwhite bgdarkgray py-4" })
+            <div class="input-group-append">
+                <input type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;" value="Buscar"></input>
+            </div>
+        </form>
+
+    </div>
+    <!-- Tabla -->
+        <div class="my-5 mx-5 h-75 overflow-auto">
+        <table class="othertable table">
+            <thead class="othertable">
+                <tr>
+                    <th class="bgdarkergray txtwhite text-center"> <h5>N° Cuenta</h5></th>
+                    <th class="bgdarkergray txtwhite text-center"> <h5>Fecha</h5></th>
+                    <th class="bgdarkergray txtwhite text-center"> <h5>Mesero</h5></th>
+                    <th class="bgdarkergray txtwhite text-center"> <h5>Ingresos</h5></th>
+                </tr>
+            </thead>
+            <tbody class="othertable">
+                <!-- Terminad de Rellenar cuando se tenga el contexto -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Fin Tabla -->
