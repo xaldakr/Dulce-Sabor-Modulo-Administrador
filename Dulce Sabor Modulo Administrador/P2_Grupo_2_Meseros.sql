@@ -22,3 +22,17 @@ CREATE TABLE DetalleCuentas (
     FOREIGN KEY (id_combo) REFERENCES combos(combo_id),
     FOREIGN KEY (id_promocion) REFERENCES promociones(promocion_id)
 );
+
+CREATE TABLE [dbo].[Empleado](
+	id int IDENTITY(1,1) NOT NULL,
+	nombre varchar(50) NULL,
+	dui varchar(10) NULL,
+	fecha_nacimiento date NULL,
+	telefono varchar(20) NULL,
+	direccion varchar(40) NULL,
+	telefono_referencia varchar(20) NULL,
+	cargo_id int NULL,
+	disponible bit NULL,
+	salario decimal(18, 2) NULL,
+	fecha_contratacion date NULL,
+);
