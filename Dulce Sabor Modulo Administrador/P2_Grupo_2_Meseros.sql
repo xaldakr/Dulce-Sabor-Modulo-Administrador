@@ -24,6 +24,23 @@ CREATE TABLE Mesa(
 	estado_mesa bit NULL,
 );
 
+CREATE TABLE DetallesPedidos(
+    id_detalle_pedido int IDENTITY(1,1) PRIMARY KEY,
+    id_venta int,
+    fecha_creacion date,
+    precio float,
+    FOREIGN KEY (id_venta) REFERENCES Ventas(id)
+);
+
 CREATE TABLE Ventas(
-    id int IDENTITY(1,1) PRIMARY KEY
+    id int IDENTITY(1,1) PRIMARY KEY,
+    fecha date,
+    estado char,
+);
+CREATE TABLE DetalleVentas(
+    id_detalle_pedido int IDENTITY(1,1) PRIMARY KEY,
+    id_venta int,
+    fecha_creacion date,
+    precio float,
+    FOREIGN KEY (id_venta) REFERENCES Ventas(id)
 );
