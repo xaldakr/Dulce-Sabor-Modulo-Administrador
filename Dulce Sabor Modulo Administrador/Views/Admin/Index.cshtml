@@ -70,10 +70,9 @@
     <!-- Fin Tabla -->
 
     <!-- Primer modal -- Ventas por Fecha -->
-    <div class="modal fade" id="VentasFecha" tabindex="-1" role="dialog" aria-labelledby="VentasFechalLabel" aria-hidden="true">
-        <div class="modal-xl modal-dialog modal-dialog-centered " role="document">
-            <div class="modal-content bgmodal ">
-                
+    <div class="modal fade" id="VentasFecha" tabindex="-1" role="dialog" aria-labelledby="VentasFechalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-xl modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bgmodal">
                 <div class="modal-body justify-content-center">
                     <button type="button" class="close txtblack px-4 pt-4" data-dismiss="modal" aria-label="Close">
                         <h2 class="txtblack"><strong>X</strong></h2>
@@ -81,13 +80,16 @@
                     <br />
                     <br />
                     <h2 class="my-4 txtblack text-center">Ventas por Fecha</h2>
-                    <div class="d-flex justify-content-center ">
-                        <form action="/" method="get" class="form w-50">
-                            <input type="date" id="datepicker" class="form-control txtwhite bgdarkgray py-4">
-                            <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;">Buscar</button>
+                    <div class="d-flex justify-content-center">
+                        <form id="" action="formularioFechas" method="get" class="form w-50">
+                            <div class="input-group">
+                                @Html.TextBox("datepicker", null, new { @class = "form-control txtwhite bgdarkgray py-4", type = "date" })
+                                <div class="input-group-append">
+                                    <input type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;" value="Buscar"></input>
                                 </div>
+                            </div>
                         </form>
+                        
                     </div>
                     <!-- Tabla -->
                     <div class="my-5 mx-5 h-75 overflow-auto">
@@ -107,15 +109,15 @@
                     </div>
                     <!-- Fin Tabla -->
                 </div>
-               
             </div>
         </div>
     </div>
 
+
     <!-- Fin Primer modal -- Ventas por Fecha -->
 
     <!-- Segundo modal -- Ventas por Mes -->
-    <div class="modal fade" id="VentasMes" tabindex="-1" role="dialog" aria-labelledby="VentasMeslLabel" aria-hidden="true">
+    <div class="modal fade" id="VentasMes" tabindex="-1" role="dialog" aria-labelledby="VentasMeslLabel" aria-hidden="true" data-backdrop="static">
         <div class="modal-xl modal-dialog modal-dialog-centered " role="document">
             <div class="modal-content bgmodal ">
 
@@ -127,25 +129,27 @@
                     <br />
                     <h2 class="my-4 txtblack text-center">Ventas por Mes</h2>
                     <div class="d-flex justify-content-center ">
-                        <form action="/" method="get" class="form w-50">
-                            <select id="meses" class="form-control txtwhite bgdarkgray py-4">
-                                <option value="1" class="txtwhite bgdarkgray">Enero</option>
-                                <option value="2" class="txtwhite bgdarkgray">Febrero</option>
-                                <option value="3" class="txtwhite bgdarkgray">Marzo</option>
-                                <option value="4" class="txtwhite bgdarkgray">Abril</option>
-                                <option value="5" class="txtwhite bgdarkgray">Mayo</option>
-                                <option value="6" class="txtwhite bgdarkgray">Junio</option>
-                                <option value="7" class="txtwhite bgdarkgray">Julio</option>
-                                <option value="8" class="txtwhite bgdarkgray">Agosto</option>
-                                <option value="9" class="txtwhite bgdarkgray">Septiembre</option>
-                                <option value="10" class="txtwhite bgdarkgray">Octubre</option>
-                                <option value="11" class="txtwhite bgdarkgray">Noviembre</option>
-                                <option value="12" class="txtwhite bgdarkgray">Diciembre</option>
-                            </select>
+                        <form action="formularioMes" method="get" class="form w-50">
+                            @Html.DropDownList("meses", new List<SelectListItem>
+                                {
+                                    new SelectListItem { Text = "Enero", Value = "1" },
+                                    new SelectListItem { Text = "Febrero", Value = "2" },
+                                    new SelectListItem { Text = "Marzo", Value = "3" },
+                                    new SelectListItem { Text = "Abril", Value = "4" },
+                                    new SelectListItem { Text = "Mayo", Value = "5" },
+                                    new SelectListItem { Text = "Junio", Value = "6" },
+                                    new SelectListItem { Text = "Julio", Value = "7" },
+                                    new SelectListItem { Text = "Agosto", Value = "8" },
+                                    new SelectListItem { Text = "Septiembre", Value = "9" },
+                                    new SelectListItem { Text = "Octubre", Value = "10" },
+                                    new SelectListItem { Text = "Noviembre", Value = "11" },
+                                    new SelectListItem { Text = "Diciembre", Value = "12" }
+                                }, null, new { @class = "form-control txtwhite bgdarkgray py-4" })
                             <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;">Buscar</button>
+                                <input type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;" value="Buscar"></input>
                             </div>
                         </form>
+                    
                     </div>
                     <!-- Tabla -->
                     <div class="my-5 mx-5 h-75 overflow-auto">
@@ -235,7 +239,7 @@
                     </button>
                     <br />
                     <br />
-                    <h2 class="my-4 txtblack text-center">Ventas por Fecha</h2>
+                    <h2 class="my-4 txtblack text-center">Ventas por Mesero</h2>
                     <div class="d-flex justify-content-center ">
                     <form action="/" method="get" class="form w-100 mx-5">
                         <div class="form w-50">
@@ -272,6 +276,18 @@
         </div>
     </div>
     <!-- Fin Cuarto modal -- Ventas por Mesero -->
+    @section scripts {
+      <script>
+          $(document).ready(function () {
+        // Verifica si hay un parámetro de consulta en la URL que indica que el modal debe mantenerse abierto
+        var modalAbierto = "@Request.Query["modalAbierto"]" === "True";
 
+        // Si el modal debe mantenerse abierto, lo abre
+        if (modalAbierto) {
+            $('#VentasFecha').modal('show');
+        }
+    });
+      </script>
+    }
 </body>
 </html>
