@@ -17,7 +17,6 @@ public partial class ParcialContext : DbContext
 
     public virtual DbSet<DetalleVenta> DetalleVentas { get; set; }
 
-    public virtual DbSet<DetallesPedido> DetallesPedidos { get; set; }
 
     public virtual DbSet<Venta> Ventas { get; set; }
 
@@ -39,20 +38,6 @@ public partial class ParcialContext : DbContext
             entity.HasOne(d => d.IdVentaNavigation).WithMany(p => p.DetalleVenta)
                 .HasForeignKey(d => d.IdVenta)
                 .HasConstraintName("FK__DetalleVe__id_ve__3C69FB99");
-        });
-
-        modelBuilder.Entity<DetallesPedido>(entity =>
-        {
-            entity.HasKey(e => e.IdDetallePedido).HasName("PK__Detalles__C08768CF852DDDFD");
-
-            entity.Property(e => e.IdDetallePedido).HasColumnName("id_detalle_pedido");
-            entity.Property(e => e.FechaCreacion).HasColumnName("fecha_creacion");
-            entity.Property(e => e.IdVenta).HasColumnName("id_venta");
-            entity.Property(e => e.Precio).HasColumnName("precio");
-
-            entity.HasOne(d => d.IdVentaNavigation).WithMany(p => p.DetallesPedidos)
-                .HasForeignKey(d => d.IdVenta)
-                .HasConstraintName("FK__DetallesP__id_ve__398D8EEE");
         });
 
         modelBuilder.Entity<Venta>(entity =>
