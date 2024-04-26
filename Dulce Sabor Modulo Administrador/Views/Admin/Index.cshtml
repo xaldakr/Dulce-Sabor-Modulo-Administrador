@@ -32,19 +32,19 @@
                 <h3 class="text-center"><strong>REPORTES</strong></h3>
                 
                 <!-- Boton Primer modal -- Ventas por Fecha -->
-                <button type="button" class="btn bgblack txtwhite w-100 py-4 rounded-pill my-4" data-toggle="modal" data-target="#VentasFecha">
+                <button type="button" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3" data-toggle="modal" data-target="#VentasFecha">
                     <h3 class="text-center">Ventas por fecha</h3>
                 </button>
                 <!-- Boton Segundo modal -- Ventas por Mes -->
-                <button type="button" class="btn bgblack txtwhite w-100 py-4 rounded-pill my-4" data-toggle="modal" data-target="#VentasMes">
+                <button type="button" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3" data-toggle="modal" data-target="#VentasMes">
                     <h3 class="text-center">Ventas por mes</h3>
                 </button>
                 <!-- Boton Tercer modal -- Ventas en Linea -->
-                <button type="button" class="btn bgblack txtwhite w-100 py-4 rounded-pill my-4" data-toggle="modal" data-target="#VentasLinea">
+                <button type="button" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3" data-toggle="modal" data-target="#VentasLinea">
                     <h3 class="text-center">Ventas en linea</h3>
                 </button
                 <!-- Boton cuarto modal -- ventas mesero -->
-                 <button type="button" class="btn bgblack txtwhite w-100 py-4 rounded-pill my-4" data-toggle="modal" data-target="#VentasMesero">
+                 <button type="button" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3" data-toggle="modal" data-target="#VentasMesero">
                     <h3 class="text-center">Ventas Mesero</h3>
                 </button>
             </div>
@@ -84,6 +84,9 @@
                     <div class="d-flex justify-content-center ">
                         <form action="/" method="get" class="form w-50">
                             <input type="date" id="datepicker" class="form-control txtwhite bgdarkgray py-4">
+                            <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;">Buscar</button>
+                                </div>
                         </form>
                     </div>
                     <!-- Tabla -->
@@ -139,7 +142,9 @@
                                 <option value="11" class="txtwhite bgdarkgray">Noviembre</option>
                                 <option value="12" class="txtwhite bgdarkgray">Diciembre</option>
                             </select>
-                            
+                            <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;">Buscar</button>
+                            </div>
                         </form>
                     </div>
                     <!-- Tabla -->
@@ -179,8 +184,7 @@
                     <br />
                     <h2 class="my-4 txtblack text-center">Ventas en Linea</h2>
                     <div class="d-flex justify-content-center ">
-                        <form action="/" method="get" class="form w-100 mx-5">
-                            <div class="row justify-content-center">
+                        <form action="/" method="get" class="form w-100 mx-5 row justify-content-center">
                                 <div class="col-md-6 align-content-center align-items-center text-center px-5">
                                     <h5 class="txtblack">Fecha inicio</h5>
                                     <input type="date" id="datepickerini" class="form-control txtwhite bgdarkgray py-4">
@@ -189,7 +193,9 @@
                                     <h5 class="txtblack">Fecha fin</h5>
                                     <input type="date" id="datepickerfin" class="form-control txtwhite bgdarkgray py-4">
                                 </div>
-                            </div>
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;">Buscar</button>
+                                </div>
                         </form>
                     </div>
                     <!-- Tabla -->
@@ -215,10 +221,10 @@
         </div>
     </div>
 
-    <!-- Fin Segundo modal -- Ventas en Linea -->
+    <!-- Fin Tercer modal -- Ventas en Linea -->
 
 
-     <!-- Primer modal -- Ventas por Fecha -->
+     <!-- Cuarto modal -- Ventas por Mesero -->
     <div class="modal fade" id="VentasMesero" tabindex="-1" role="dialog" aria-labelledby="VentasFechalLabel" aria-hidden="true">
         <div class="modal-xl modal-dialog modal-dialog-centered " role="document">
             <div class="modal-content bgmodal ">
@@ -231,7 +237,7 @@
                     <br />
                     <h2 class="my-4 txtblack text-center">Ventas por Fecha</h2>
                     <div class="d-flex justify-content-center ">
-                   
+                    <form action="/" method="get" class="form w-100 mx-5">
                         <div class="form w-50">
                             <div class="input-group mb-3">
                                 <input type="text" id="nombre" name="nombre" class="form-control txtwhite bgdarkgray py-4 long-input" 
@@ -241,7 +247,7 @@
                                 </div>
                             </div>
                         </div>
-                    
+                     </form>
                   </div>
                     <!-- Tabla -->
                     <div class="my-5 mx-5 h-75 overflow-auto">
@@ -265,7 +271,7 @@
             </div>
         </div>
     </div>
-
+    <!-- Fin Cuarto modal -- Ventas por Mesero -->
 
 </body>
 </html>
