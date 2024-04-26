@@ -31,12 +31,27 @@ namespace Dulce_Sabor_Modulo_Administrador.Controllers
         //Interno a tablaMes
         public IActionResult formularioMes()
         {
-            return RedirectToAction("tablaFechas");
+            return RedirectToAction("tablaMes");
         }
         //Index a tablaMes
         public IActionResult enviarMes()
         {
-            return RedirectToAction("tablaFechas");
+            return RedirectToAction("tablaMes");
+        }
+        //Tabla de Ventas en Linea
+        public IActionResult tablaLinea()
+        {
+            return View();
+        }
+        //Interno a tablaMes
+        public IActionResult formularioLinea()
+        {
+            return RedirectToAction("tablaLinea");
+        }
+        //Index a tablaMes
+        public IActionResult enviarLinea()
+        {
+            return RedirectToAction("tablaLinea");
         }
         //regreso general
         public IActionResult regresar()

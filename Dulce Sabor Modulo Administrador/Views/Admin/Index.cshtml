@@ -36,6 +36,9 @@
                     <input type="submit" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3 textxl" value="Ventas por mes" />
                 </form>
                 <!-- Boton Tercer modal -- Ventas en Linea -->
+                <form asp-action="enviarMes" method="get" class="form w-100">
+                    <input type="submit" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3 textxl" value="Ventas en linea" />
+                </form>
                 <button type="button" class="btn bgblack txtwhite w-100 py-3 rounded-pill my-3" data-toggle="modal" data-target="#VentasLinea">
                     <h3 class="text-center">Ventas en linea</h3>
                 </button
@@ -65,66 +68,6 @@
     </div>
     <!-- Fin Tabla -->
 
-
-    <!-- Segundo modal -- Ventas por Mes -->
-    <div class="modal fade" id="VentasMes" tabindex="-1" role="dialog" aria-labelledby="VentasMeslLabel" aria-hidden="true" data-backdrop="static">
-        <div class="modal-xl modal-dialog modal-dialog-centered " role="document">
-            <div class="modal-content bgmodal ">
-
-                <div class="modal-body justify-content-center">
-                    <button type="button" class="close txtblack px-4 pt-4" data-dismiss="modal" aria-label="Close">
-                        <h2 class="txtblack"><strong>X</strong></h2>
-                    </button>
-                    <br />
-                    <br />
-                    <h2 class="my-4 txtblack text-center">Ventas por Mes</h2>
-                    <div class="d-flex justify-content-center ">
-                        <form asp-action="formularioMes" method="get" class="form w-50">
-                            @Html.DropDownList("meses", new List<SelectListItem>
-                                {
-                                    new SelectListItem { Text = "Enero", Value = "1" },
-                                    new SelectListItem { Text = "Febrero", Value = "2" },
-                                    new SelectListItem { Text = "Marzo", Value = "3" },
-                                    new SelectListItem { Text = "Abril", Value = "4" },
-                                    new SelectListItem { Text = "Mayo", Value = "5" },
-                                    new SelectListItem { Text = "Junio", Value = "6" },
-                                    new SelectListItem { Text = "Julio", Value = "7" },
-                                    new SelectListItem { Text = "Agosto", Value = "8" },
-                                    new SelectListItem { Text = "Septiembre", Value = "9" },
-                                    new SelectListItem { Text = "Octubre", Value = "10" },
-                                    new SelectListItem { Text = "Noviembre", Value = "11" },
-                                    new SelectListItem { Text = "Diciembre", Value = "12" }
-                                }, null, new { @class = "form-control txtwhite bgdarkgray py-4" })
-                            <div class="input-group-append">
-                                <input type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;" value="Buscar"></input>
-                            </div>
-                        </form>
-                    
-                    </div>
-                    <!-- Tabla -->
-                    <div class="my-5 mx-5 h-75 overflow-auto">
-                        <table class="othertable table">
-                            <thead class="othertable">
-                                <tr>
-                                    <th class="bgdarkergray txtwhite text-center"> <h5>N° Cuenta</h5></th>
-                                    <th class="bgdarkergray txtwhite text-center"> <h5>Fecha</h5></th>
-                                    <th class="bgdarkergray txtwhite text-center"> <h5>Mesero</h5></th>
-                                    <th class="bgdarkergray txtwhite text-center"> <h5>Ingresos</h5></th>
-                                </tr>
-                            </thead>
-                            <tbody class="othertable">
-                                <!-- Terminad de Rellenar cuando se tenga el contexto -->
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- Fin Tabla -->
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Fin Segundo modal -- Ventas por Mes -->
     <!-- Tercer modal -- Ventas en Linea -->
     <div class="modal fade" id="VentasLinea" tabindex="-1" role="dialog" aria-labelledby="VentasLinealLabel" aria-hidden="true">
         <div class="modal-xl modal-dialog modal-dialog-centered " role="document">
@@ -138,7 +81,7 @@
                     <br />
                     <h2 class="my-4 txtblack text-center">Ventas en Linea</h2>
                     <div class="d-flex justify-content-center ">
-                        <form action="/" method="get" class="form w-100 mx-5 row justify-content-center">
+                        <form asp-action="formularioLinea" method="get" class="form w-100 mx-5 row justify-content-center">
                                 <div class="col-md-6 align-content-center align-items-center text-center px-5">
                                     <h5 class="txtblack">Fecha inicio</h5>
                                     <input type="date" id="datepickerini" class="form-control txtwhite bgdarkgray py-4">
