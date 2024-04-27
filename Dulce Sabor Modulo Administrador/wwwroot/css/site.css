@@ -70,3 +70,17 @@ body {
 .textxl {
     font-size: 2.5vh !important;
 }
+.textabla {
+    font-size: 1.6rem !important;
+}
+
+table {
+    overflow-y: scroll hidden !important;
+    overflow-x: scroll hidden !important;
+}
+
+.overflow-scrolla {
+    max-height: 60vh; 
+    overflow-x: auto; 
+    overflow-y: auto; 
+}

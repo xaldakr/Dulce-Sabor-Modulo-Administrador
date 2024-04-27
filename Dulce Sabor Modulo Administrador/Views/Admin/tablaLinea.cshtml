@@ -2,6 +2,8 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    DateTime Fechati = ViewBag.Fechati;
+    DateTime Fechatfi = ViewBag.Fechatfi;
 }
 <div>
     <form id="" asp-action="regresar" method="get" class="form">
@@ -15,11 +17,13 @@
         <form asp-action="formularioLinea" method="get" class="form w-100 mx-5 row justify-content-center">
             <div class="col-md-6 align-content-center align-items-center text-center px-5">
                 <h5 class="txtblack">Fecha inicio</h5>
-                @Html.TextBox("fechaini", null, new { @class = "form-control txtwhite bgdarkgray py-4", type = "date" })
+                <h5 class="txtblack">@Fechati.ToString("dd/MM/yyyy")</h5>
+                @Html.TextBox("fechai", null, new { @class = "form-control txtwhite bgdarkgray py-4", type = "date" })
             </div>
             <div class="col-md-6 align-content-center align-items-center text-center px-5">
                 <h5 class="txtblack">Fecha fin</h5>
-                @Html.TextBox("fechafin", null, new { @class = "form-control txtwhite bgdarkgray py-4", type = "date" })
+                <h5 class="txtblack">@Fechatfi.ToString("dd/MM/yyyy")</h5>
+                @Html.TextBox("fechaf", null, new { @class = "form-control txtwhite bgdarkgray py-4", type = "date" })
             </div>
             <div class="input-group-append">
                 <input type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;" value="Buscar"/>
@@ -33,12 +37,18 @@
                 <tr>
                     <th class="bgdarkergray txtwhite text-center"> <h5>N° Cuenta</h5></th>
                     <th class="bgdarkergray txtwhite text-center"> <h5>Fecha</h5></th>
-                    <th class="bgdarkergray txtwhite text-center"> <h5>Mesero</h5></th>
                     <th class="bgdarkergray txtwhite text-center"> <h5>Ingresos</h5></th>
                 </tr>
             </thead>
             <tbody class="othertable">
-                <!-- Terminad de Rellenar cuando se tenga el contexto -->
+                @foreach (var dato in (IEnumerable<dynamic>)ViewData["datosTabla4"])
+                {
+                    <tr>
+                        <td class="txtblack text-center bgwhite textabla"> @dato.NCuenta</td>
+                        <td class="txtblack text-center bgwhite textabla"> @dato.FechaC</td>
+                        <td class="txtblack text-center bgwhite textabla"> $@dato.Ingresos</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

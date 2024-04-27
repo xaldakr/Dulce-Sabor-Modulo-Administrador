@@ -2,6 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    DateTime FechaM = ViewBag.FechaM;
 }
 <div>
     <form id="" asp-action="regresar" method="get" class="form">
@@ -11,24 +12,10 @@
     <br />
     <br />
     <h2 class="my-4 txtblack text-center">Ventas por Mes</h2>
+    <h2 class="my-4 txtblack text-center">@FechaM.ToString("MMMM yyyy").ToUpper()</h2>
     <div class="d-flex justify-content-center ">
         <form asp-action="formularioMes" method="get" class="form w-50">
-            @Html.DropDownList("mes", new List<SelectListItem>
-            {
-            new SelectListItem { Text = "Enero", Value = "1" },
-            new SelectListItem { Text = "Febrero", Value = "2" },
-            new SelectListItem { Text = "Marzo", Value = "3" },
-            new SelectListItem { Text = "Abril", Value = "4" },
-            new SelectListItem { Text = "Mayo", Value = "5" },
-            new SelectListItem { Text = "Junio", Value = "6" },
-            new SelectListItem { Text = "Julio", Value = "7" },
-            new SelectListItem { Text = "Agosto", Value = "8" },
-            new SelectListItem { Text = "Septiembre", Value = "9" },
-            new SelectListItem { Text = "Octubre", Value = "10" },
-            new SelectListItem { Text = "Noviembre", Value = "11" },
-            new SelectListItem { Text = "Diciembre", Value = "12" }
-            }, null, new { @class = "form-control txtwhite bgdarkgray py-4 d-inline" })
-            <br />
+            @Html.DropDownList("Mes", ViewData["datosCol1"] as SelectList, "Seleccione un mes", new { @class = " txtwhite bgdarkgray py-4 d-inline w-100 text-center" })  
             <div class="input-group-append d-flex justify-content-center">
                 <input type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;" value="Buscar"></input>
             </div>
@@ -46,7 +33,15 @@
                 </tr>
             </thead>
             <tbody class="othertable">
-                <!-- Terminad de Rellenar cuando se tenga el contexto -->
+                @foreach (var dato in (IEnumerable<dynamic>)ViewData["datosTabla3"])
+                {
+                    <tr>
+                        <td class="txtblack text-center bgwhite textabla"> @dato.NCuenta</td>
+                        <td class="txtblack text-center bgwhite textabla"> @dato.FechaC</td>
+                        <td class="txtblack text-center bgwhite textabla"> @dato.Mesero</td>
+                        <td class="txtblack text-center bgwhite textabla"> $@dato.Ingresos</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

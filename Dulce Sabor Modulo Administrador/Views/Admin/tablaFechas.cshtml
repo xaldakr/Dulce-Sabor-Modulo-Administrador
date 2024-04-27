@@ -2,6 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    DateTime Fechatf = ViewBag.Fechatf;
 }
 <div class="">
     <form id="" asp-action="regresar" method="get" class="form">
@@ -11,10 +12,11 @@
     <br />
     <br />
     <h2 class="my-4 txtblack text-center">Ventas por Fecha</h2>
+    <h2 class="my-4 txtblack text-center">@Fechatf.ToString("dd/MM/yyyy")</h2>
     <div class="d-flex justify-content-center">
         <form id="" asp-action="formularioFechas" method="get" class="form w-50">
             <div class="input-group">
-                @Html.TextBox("fecha", null, new { @class = "form-control txtwhite bgdarkgray py-4", type = "date" })
+                @Html.TextBox("fecha", Fechatf, new { @class = "form-control txtwhite bgdarkgray py-4", type = "date" })
                 <div class="input-group-append">
                     <input type="submit" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid black;" value="Buscar"></input>
                 </div>
@@ -22,18 +24,26 @@
         </form>
 
     </div>
-    <div class="my-5 mx-5 h-75 overflow-auto">
+    <div class="my-5 mx-5  overflow-scrolla">
         <table class="othertable table">
             <thead class="othertable">
                 <tr>
                     <th class="bgdarkergray txtwhite text-center"> <h5>N° Cuenta</h5></th>
-                    <th class="bgdarkergray txtwhite text-center"> <h5>Fecha</h5></th>
+                    <th class="bgdarkergray txtwhite text-center"> <h5>Hora</h5></th>
                     <th class="bgdarkergray txtwhite text-center"> <h5>Mesero</h5></th>
                     <th class="bgdarkergray txtwhite text-center"> <h5>Ingresos</h5></th>
                 </tr>
             </thead>
             <tbody class="othertable">
-                <!-- Terminad de Rellenar cuando se tenga el contexto -->
+                @foreach (var dato in (IEnumerable<dynamic>)ViewData["datosTabla2"])
+                {
+                    <tr>
+                        <td class="txtblack text-center bgwhite textabla"> @dato.NCuenta</td>
+                        <td class="txtblack text-center bgwhite textabla"> @dato.FechaC</td>
+                        <td class="txtblack text-center bgwhite textabla"> @dato.Mesero</td>
+                        <td class="txtblack text-center bgwhite textabla"> $@dato.Ingresos</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

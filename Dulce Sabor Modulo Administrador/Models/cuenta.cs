@@ -13,7 +13,7 @@
         [Required]
         public int id_empleado { get; set; }
 
-        public DateTime? fecha_apertura { get; set; }
+        public DateTime fecha_apertura { get; set; }
 
         [Required]
         [StringLength(10)]

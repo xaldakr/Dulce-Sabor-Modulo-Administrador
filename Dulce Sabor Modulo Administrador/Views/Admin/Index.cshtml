@@ -50,19 +50,28 @@
         </div>
     </div>
     <!-- Tabla -->
-    <div class="my-2">
-        <table class="thicctable table">
+    <div class="my-2 overflow-scrolla">
+        <table class="thicctable table ">
             <thead class="thicctable">
                 <tr>
                     <th class=" txtblack text-center bggray"> <h3>N° Mesa</h3></th>
-                    <th class=" txtblack text-center bggray"> <h3>N° cuenta en mesa</h3></th>
-                    <th class=" txtblack text-center bggray"> <h3>Fecha de Creación</h3></th>
+                    <th class=" txtblack text-center bggray"> <h3>N° Cuenta</h3></th>
+                    <th class=" txtblack text-center bggray"> <h3>Hora de Creación</h3></th>
                     <th class=" txtblack text-center bggray"> <h3>Estado</h3></th>
                     <th class=" txtblack text-center bggray"> <h3>Ingresos por cuenta</h3></th>
                 </tr>
             </thead>
             <tbody class="thicctable">
-                <!-- Terminad de Rellenar cuando se tenga el contexto -->
+                @foreach (var dato in (IEnumerable<dynamic>)ViewData["datosTabla1"])
+                {
+                    <tr>
+                        <td class="txtblack text-center bgwhite textabla"> @dato.Nmesa</td>
+                        <td class="txtblack text-center bgwhite textabla"> @dato.NCuenta</td>
+                        <td class="txtblack text-center bgwhite textabla"> @dato.FechaC</td>
+                        <td class="txtblack text-center bgwhite textabla"> @dato.Estado</td>
+                        <td class="txtblack text-center bgwhite textabla"> $@dato.Ingresos</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
