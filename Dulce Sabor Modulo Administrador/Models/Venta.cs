@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dulce_Sabor_Modulo_Administrador.Models;
 
-public partial class Venta
+public class venta
 {
-    public int Id { get; set; }
+    [Key]
+    public int id { get; set; }
 
-    public DateOnly? Fecha { get; set; }
+    public DateTime? fecha { get; set; }
 
-    public string? Estado { get; set; }
-
-    public virtual ICollection<DetalleVenta> DetalleVenta { get; set; } = new List<DetalleVenta>();
+    public string? estado { get; set; }
 
 }

@@ -1,4 +1,6 @@
-﻿
+﻿@{
+    dynamic DashBoard = ViewBag.Dash;
+}
 <!DOCTYPE html>
 
 <html>
@@ -13,15 +15,15 @@
         <div class="col-lg-6 ">
             <div class="me-4 p-4 txtblack bggray">
                 <h3 class="text-center my-1"><strong>DATOS GENERALES</strong></h3>
-                <h3 class="my-3">Mesas disponibles:  </h3>
-                <h3 class="my-3">Mesas ocupadas:  </h3>
-                <h3 class="my-3">N° de pedidos en proceso:  </h3>
-                <h3 class="mt-3">N° de pedidos finalizados:  </h3>
+                <h3 class="my-3">Mesas disponibles:  @DashBoard.MesasD</h3>
+                <h3 class="my-3">Mesas ocupadas: @DashBoard.MesasO </h3>
+                <h3 class="my-3">N° de pedidos en proceso:  @DashBoard.PedA</h3>
+                <h3 class="mt-3">N° de pedidos finalizados:  @DashBoard.PedC</h3>
                 <hr class="thicc" />
-                <h3 class="my-3">Ingresos totales en cuentas cerradas:  </h3>
-                <h3 class="mt-3">Ingresos totales de ventas en línea:  </h3>
+                <h3 class="my-3">Ingresos totales en cuentas cerradas:  $@DashBoard.IngC</h3>
+                <h3 class="mt-3">Ingresos totales de ventas en línea:  $@DashBoard.IngV</h3>
                 <hr class="thicc" />
-                <h3 class="my-3">Total de ingresos:  </h3>
+                <h3 class="my-3">Total de ingresos:  $@DashBoard.Tot</h3>
             </div>
         </div>
         <div class="col-lg-6">

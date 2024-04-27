@@ -1,0 +1,266 @@
+--INSERT EMPLEADO------------------------------------------------------------------------
+
+INSERT INTO Empleado (nombre) VALUES ('Juan');
+INSERT INTO Empleado (nombre) VALUES ('María');
+INSERT INTO Empleado (nombre) VALUES ('Pedro');
+INSERT INTO Empleado (nombre) VALUES ('Ana');
+INSERT INTO Empleado (nombre) VALUES ('Luis');
+INSERT INTO Empleado (nombre) VALUES ('Sofía');
+INSERT INTO Empleado (nombre) VALUES ('Carlos');
+INSERT INTO Empleado (nombre) VALUES ('Laura');
+INSERT INTO Empleado (nombre) VALUES ('Diego');
+INSERT INTO Empleado (nombre) VALUES ('Paula');
+INSERT INTO Empleado (nombre) VALUES ('Andrés');
+INSERT INTO Empleado (nombre) VALUES ('Lucía');
+INSERT INTO Empleado (nombre) VALUES ('Martín');
+INSERT INTO Empleado (nombre) VALUES ('Valeria');
+INSERT INTO Empleado (nombre) VALUES ('Javier');
+
+--INSERT MESA---------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (4, 1);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (5, 0);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (6, 1);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (7, 1);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (8, 0);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (9, 0);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (10, 1);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (11, 0);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (12, 0);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (13, 1);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (14, 0);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (15, 0);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (16, 1);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (17, 0);
+INSERT INTO Mesa (numero_mesa, estado_mesa) VALUES (18, 0);
+
+--INSERT CUENTAS---------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (1, 1, '2024-04-25 09:30:00', 'ABIERTO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (2, 3, '2024-04-25 10:15:00', 'ABIERTO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (3, 2, '2024-04-25 11:00:00', 'ABIERTO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (4, 4, '2024-04-25 12:30:00', 'ABIERTO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (5,7, '2024-04-25 13:45:00', 'ABIERTO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (6,2, '2024-04-25 14:30:00', 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (7,8, '2024-04-25 15:00:00', 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (8,9, '2024-04-25 16:15:00', 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (9,2, '2024-04-25 17:30:00', 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (10,1, '2024-04-25 18:45:00', 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (11,2, '2024-04-25 19:00:00', 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (12,3, '2024-04-25 20:15:00', 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (13,4, '2024-04-25 21:30:00', 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (14,5, '2024-04-25 22:45:00', 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (15,7, '2024-04-25 23:00:00', 'CERRADO');
+
+--INSERT VENTAS---------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+INSERT INTO Ventas (fecha, estado) VALUES ('2024-04-25', 'F');
+
+--INSERT DETALLECUENTAS---------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (1, 15.99, 0.1, 'SOLICITADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (1, 25.50, 0, 'FINALIZADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (2, 10.75, 0.2, 'SOLICITADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (2, 8.00, 0, 'ENTREGADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (3, 30.00, 0.15, 'EN PROCESO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (3, 18.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (4, 12.49, 0, 'FINALIZADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (4, 9.99, 0, 'ENTREGADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (5, 20.00, 0, 'SOLICITADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (5, 15.25, 0.3, 'EN PROCESO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (6, 35.99, 0, 'FINALIZADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (6, 28.50, 0, 'ENTREGADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (7, 14.75, 0.1, 'SOLICITADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (7, 22.00, 0, 'ENTREGADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (8, 40.00, 0, 'SOLICITADO');
+
+--INSERT DETALLEVENTAS---------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (1, '2024-04-25', 50.99);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (2, '2024-04-25', 75.50);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (1, '2024-04-25', 30.75);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (3, '2024-04-25', 100.25);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (2, '2024-04-25', 45.99);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (4, '2024-04-25', 85.30);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (3, '2024-04-25', 60.20);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (5, '2024-04-25', 70.45);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (4, '2024-04-25', 95.80);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (5, '2024-04-25', 55.60);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (1, '2024-04-25', 80.20);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (2, '2024-04-25', 40.50);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (3, '2024-04-25', 65.75);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (4, '2024-04-25', 90.99);
+INSERT INTO DetalleVentas (id_venta, fecha_creacion, precio) VALUES (5, '2024-04-25', 55.25);
+
+--LAST INSERTS------------------------------------------------------------------------------------------------------------------------------
+
+UPDATE Cuentas set estado = 'CERRADO';
+UPDATE DetalleCuentas set estado = 'CANCELADO';
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (1, 1, GETDATE(), 'ABIERTO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (2, 3, GETDATE(), 'ABIERTO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (3, 2, GETDATE(), 'ABIERTO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (4, 4, GETDATE(), 'ABIERTO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (5,7, GETDATE(), 'ABIERTO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (6,2, GETDATE(), 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (7,8, GETDATE(), 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (8,9, GETDATE(), 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (9,2, GETDATE(), 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (10,1, GETDATE(), 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (11,2, GETDATE(), 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (12,3, GETDATE(), 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (13,4, GETDATE(), 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (14,5, GETDATE(), 'CERRADO');
+
+INSERT INTO Cuentas (id_mesa, id_empleado, fecha_apertura, estado) 
+VALUES (15,7, GETDATE(), 'CERRADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (16, 18.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (17, 11.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (18, 14.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (19, 12.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (20, 10.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (21, 18.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (21, 11.99, 0, 'FINALIZADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (21, 12.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (22, 12.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (23, 13.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (24, 17.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (25, 20.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (26, 11.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (27, 12.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (28, 13.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (29, 16.99, 0, 'CANCELADO');
+
+INSERT INTO DetalleCuentas (id_cuenta, precio, descuento, estado) 
+VALUES (30, 18.99, 0, 'CANCELADO');

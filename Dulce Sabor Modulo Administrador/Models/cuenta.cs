@@ -6,19 +6,12 @@
     public class cuenta
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id_cuenta { get; set; }
 
         [Required]
         public int id_mesa { get; set; }
-
         [Required]
-        [StringLength(255)]
-        public string nombre { get; set; }
-
-        [Required]
-        [StringLength(255)]
-        public string apellido { get; set; }
+        public int id_empleado { get; set; }
 
         public DateTime? fecha_apertura { get; set; }
 
